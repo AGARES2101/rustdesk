@@ -89,12 +89,12 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "My Company" "\0"
+            VALUE "CompanyName", "Support_Ruware" "\0"
             VALUE "FileDescription", "Ruware Desk Remote Desktop" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "rustdesk" "\0"
-            VALUE "LegalCopyright", "Copyright © 2025 My Company. All rights reserved." "\0"
-            VALUE "OriginalFilename", "rustdesk.exe" "\0"
+            VALUE "InternalName", "ruwaredesk" "\0"
+            VALUE "LegalCopyright", "Copyright © 2025 Support_Ruware. All rights reserved." "\0"
+            VALUE "OriginalFilename", "ruwaredesk.exe" "\0"
             VALUE "ProductName", "Ruware Desk" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END

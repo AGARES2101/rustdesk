@@ -2307,7 +2307,7 @@ class _AboutState extends State<_About> {
                         .marginSymmetric(vertical: 4.0)),
               InkWell(
                   onTap: () {
-                    launchUrlString('https://rustdesk.com/privacy.html');
+                    launchUrlString('https://ruware.tech/privacy');
                   },
                   child: Text(
                     translate('Privacy Statement'),
@@ -2315,7 +2315,7 @@ class _AboutState extends State<_About> {
                   ).marginSymmetric(vertical: 4.0)),
               InkWell(
                   onTap: () {
-                    launchUrlString('https://rustdesk.com');
+                    launchUrlString('https://ruware.tech');
                   },
                   child: Text(
                     translate('Website'),
@@ -2333,7 +2333,7 @@ class _AboutState extends State<_About> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Copyright © ${DateTime.now().toString().substring(0, 4)} My Company\n$license',
+                            'Copyright © ${DateTime.now().toString().substring(0, 4)} Support_Ruware\n$license',
                             style: const TextStyle(color: Colors.white),
                           ),
                           Text(
