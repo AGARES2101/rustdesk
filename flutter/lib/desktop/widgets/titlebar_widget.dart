@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-const sidebarColor = Color(0xFF0C6AF6);
-const backgroundStartColor = Color(0xFF0583EA);
-const backgroundEndColor = Color(0xFF0697EA);
+// Ruware Desk brand colors
+const sidebarColor = Color(0xFF9C1D12);
+const backgroundStartColor = Color(0xFF9C1D12);
+const backgroundEndColor = Color(0xFF7A140D);
 
 class DesktopTitleBar extends StatelessWidget {
   final Widget? child;
