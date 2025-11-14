@@ -145,7 +145,7 @@ pub static ref T: std::collections::HashMap<&'static str, &'static str> =
         ("Failed to make direct connection to remote desktop", "Greška u direktnom spajanju na udaljenu radnu površinu"),
         ("Set Password", "Postavi lozinku"),
         ("OS Password", "OS lozinka"),
-        ("install_tip", "Zbog UAC RustDesk ne može raditi pravilno u nekim slučajevima. Da biste prevazišli UAC, kliknite taster ispod da instalirate RustDesk na sistem."),
+        ("install_tip", "Zbog UAC RuwareDesk ne može raditi pravilno u nekim slučajevima. Da biste prevazišli UAC, kliknite taster ispod da instalirate RustDesk na sistem."),
         ("Click to upgrade", "Klik za nadogradnju"),
         ("Configure", "Konfigurisanje"),
         ("config_acc", "Da biste daljinski kontrolisali radnu površinu, RustDesk-u treba da dodelite \"Accessibility\" prava."),

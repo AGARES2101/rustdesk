@@ -416,7 +416,7 @@ pub static ref T: std::collections::HashMap<&'static str, &'static str> =
         ("Ask the remote user for authentication", "Minta pihak pengguna remote untuk otentikasi"),
         ("Choose this if the remote account is administrator", "Pilih ini jika akun adalah \"administrator\""),
         ("Transmit the username and password of administrator", "Transmisikan nama pengguna dan kata sandi administrator"),
-        ("still_click_uac_tip", "Masih memerlukan persetujuan pihak pengguna remote untuk mengklik OK pada jendela UAC RustDesk yang sedang berjalan"),
+        ("still_click_uac_tip", "Masih memerlukan persetujuan pihak pengguna remote untuk mengklik OK pada jendela UAC RuwareDesk yang sedang berjalan"),
         ("Request Elevation", "Permintaan Elevasi"),
         ("wait_accept_uac_tip", "Harap tunggu pihak pengguna remote menerima jendela UAC."),
         ("Elevate successfully", "Elevasi berhasil"),
