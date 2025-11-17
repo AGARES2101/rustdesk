@@ -109,6 +109,8 @@ impl Drop for SimpleCallOnReturn {
 }
 
 pub fn global_init() -> bool {
+    // RuwareDesk: Initialize default server settings
+    crate::ruwaredesk_defaults::init_ruwaredesk_defaults();
     #[cfg(target_os = "linux")]
     {
         if !crate::platform::linux::is_x11() {
