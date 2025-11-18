@@ -1,9 +1,10 @@
 name: RuwareDesk Windows Build
+
 on:
-  # Можно запускать руками через gh / GitHub UI
+  # Запуск руками через GitHub UI или gh
   workflow_dispatch:
 
-  # И автоматом при пуше в master (если захочешь)
+  # Автоматический запуск при пуше в master (можно оставить, удобно)
   push:
     branches: [ master ]
     paths:
@@ -20,7 +21,6 @@ jobs:
 
     env:
       FLUTTER_VERSION: 3.24.5
-      # Можно зафиксировать конкретную версию Rust, близко к тому, что использует rustdesk
       RUST_TOOLCHAIN: 1.75.0
 
     steps:
@@ -48,15 +48,15 @@ jobs:
         run: flutter pub get
         working-directory: flutter
 
-      # Здесь дергаем стандартную сборку windows-клиента
       - name: Build RuwareDesk Windows (Flutter)
         run: flutter build windows --release
         working-directory: flutter
 
       - name: Collect RuwareDesk artifacts
+        shell: bash
         run: |
-          mkdir artifacts
-          copy build\windows\x64\runner\Release\*.exe artifacts\
+          mkdir -p artifacts
+          cp build/windows/x64/runner/Release/*.exe artifacts/
         working-directory: flutter
 
       - name: Upload RuwareDesk Windows artifact
