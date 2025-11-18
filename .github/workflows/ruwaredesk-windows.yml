@@ -1,0 +1,66 @@
+name: RuwareDesk Windows Build
+on:
+  # Можно запускать руками через gh / GitHub UI
+  workflow_dispatch:
+
+  # И автоматом при пуше в master (если захочешь)
+  push:
+    branches: [ master ]
+    paths:
+      - "flutter/**"
+      - "src/**"
+      - "libs/**"
+      - "Cargo.toml"
+      - "Cargo.lock"
+      - ".github/workflows/ruwaredesk-windows.yml"
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    env:
+      FLUTTER_VERSION: 3.24.5
+      # Можно зафиксировать конкретную версию Rust, близко к тому, что использует rustdesk
+      RUST_TOOLCHAIN: 1.75.0
+
+    steps:
+      - name: Checkout repo with submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: ${{ env.RUST_TOOLCHAIN }}
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+
+      - name: Enable Windows desktop for Flutter
+        run: flutter config --enable-windows-desktop
+        working-directory: flutter
+
+      - name: Flutter pub get
+        run: flutter pub get
+        working-directory: flutter
+
+      # Здесь дергаем стандартную сборку windows-клиента
+      - name: Build RuwareDesk Windows (Flutter)
+        run: flutter build windows --release
+        working-directory: flutter
+
+      - name: Collect RuwareDesk artifacts
+        run: |
+          mkdir artifacts
+          copy build\windows\x64\runner\Release\*.exe artifacts\
+        working-directory: flutter
+
+      - name: Upload RuwareDesk Windows artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: RuwareDesk-windows-x86_64
+          path: flutter/artifacts
